@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
 
 public class DataProvider {
 
@@ -17,10 +19,18 @@ public class DataProvider {
     @BeforeClass
     public void setup(String browser) {
         if (browser.equalsIgnoreCase("chrome")) {
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless=new"); // Runs invisibly
+            options.addArguments("--no-sandbox"); // Required for Linux servers
+            options.addArguments("--disable-dev-shm-usage");
+            driver = new ChromeDriver(options);
         }
          else {
-            driver = new EdgeDriver();
+            EdgeOptions options = new EdgeOptions();
+            options.addArguments("--headless=new"); // Runs invisibly
+            options.addArguments("--no-sandbox"); // Required for Linux servers
+            options.addArguments("--disable-dev-shm-usage");
+            driver = new EdgeDriver(options);
         }
         PageFactory.initElements(driver, this);
     }
