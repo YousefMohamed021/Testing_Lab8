@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="GitHub Actions Master Suite">
+    <parameter name="browser" value="chrome"/>
+
+    <test name="All Automated QA Tests">
+        <classes>
+            <class name="Exercise_1.Test_Ordering_Lifecycle"/>
+
+            <class name="Exercise_2.DataProvider"/>
+
+            <class name="Exercise_3.BankingTest"/>
+        </classes>
+    </test>
+</suite>
