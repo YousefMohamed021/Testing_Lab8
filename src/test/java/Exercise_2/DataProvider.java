@@ -18,20 +18,20 @@ public class DataProvider {
     @BeforeClass
     public void setup(String browser) {
         if (browser.equalsIgnoreCase("chrome")) {
-//            ChromeOptions options = new ChromeOptions();
-//            options.addArguments("--headless=new"); // Runs invisibly
-//            options.addArguments("--no-sandbox"); // Required for Linux servers
-//            options.addArguments("--disable-dev-shm-usage");
-//            driver = new ChromeDriver(options);
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless=new"); // Runs invisibly
+            options.addArguments("--no-sandbox"); // Required for Linux servers
+            options.addArguments("--disable-dev-shm-usage");
+            driver = new ChromeDriver(options);
             driver = new ChromeDriver();
         }
-         else {
+        else {
             EdgeOptions options = new EdgeOptions();
-//            options.addArguments("--headless=new"); // Runs invisibly
-//            options.addArguments("--no-sandbox"); // Required for Linux servers
-//            options.addArguments("--disable-dev-shm-usage");
-//            driver = new EdgeDriver(options);
-              driver = new EdgeDriver();
+            options.addArguments("--headless=new"); // Runs invisibly
+            options.addArguments("--no-sandbox"); // Required for Linux servers
+            options.addArguments("--disable-dev-shm-usage");
+            driver = new EdgeDriver(options);
+            driver = new EdgeDriver();
         }
         PageFactory.initElements(driver, this);
     }

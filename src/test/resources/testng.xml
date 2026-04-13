@@ -3,7 +3,7 @@
 <suite name="GitHub Actions Master Suite">
     <parameter name="browser" value="chrome"/>
 
-    <test name="All Automated QA Tests">
+    <test name="Automated Tests">
         <classes>
             <class name="Exercise_1.Test_Ordering_Lifecycle"/>
 
