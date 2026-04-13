@@ -6,7 +6,9 @@
     <test name="Automated Tests">
         <classes>
             <class name="Exercise_1.Test_Ordering_Lifecycle"/>
+
             <class name="Exercise_2.DataProvider"/>
+
             <class name="Exercise_3.BankingTest"/>
         </classes>
     </test>
