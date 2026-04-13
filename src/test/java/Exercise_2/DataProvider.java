@@ -23,7 +23,6 @@ public class DataProvider {
             options.addArguments("--no-sandbox"); // Required for Linux servers
             options.addArguments("--disable-dev-shm-usage");
             driver = new ChromeDriver(options);
-            driver = new ChromeDriver();
         }
         else {
             EdgeOptions options = new EdgeOptions();
@@ -31,7 +30,6 @@ public class DataProvider {
             options.addArguments("--no-sandbox"); // Required for Linux servers
             options.addArguments("--disable-dev-shm-usage");
             driver = new EdgeDriver(options);
-            driver = new EdgeDriver();
         }
         PageFactory.initElements(driver, this);
     }
