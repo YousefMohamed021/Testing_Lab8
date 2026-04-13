@@ -1,5 +1,4 @@
 package Exercise_2;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -19,18 +18,20 @@ public class DataProvider {
     @BeforeClass
     public void setup(String browser) {
         if (browser.equalsIgnoreCase("chrome")) {
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless=new"); // Runs invisibly
-            options.addArguments("--no-sandbox"); // Required for Linux servers
-            options.addArguments("--disable-dev-shm-usage");
-            driver = new ChromeDriver(options);
+//            ChromeOptions options = new ChromeOptions();
+//            options.addArguments("--headless=new"); // Runs invisibly
+//            options.addArguments("--no-sandbox"); // Required for Linux servers
+//            options.addArguments("--disable-dev-shm-usage");
+//            driver = new ChromeDriver(options);
+            driver = new ChromeDriver();
         }
          else {
             EdgeOptions options = new EdgeOptions();
-            options.addArguments("--headless=new"); // Runs invisibly
-            options.addArguments("--no-sandbox"); // Required for Linux servers
-            options.addArguments("--disable-dev-shm-usage");
-            driver = new EdgeDriver(options);
+//            options.addArguments("--headless=new"); // Runs invisibly
+//            options.addArguments("--no-sandbox"); // Required for Linux servers
+//            options.addArguments("--disable-dev-shm-usage");
+//            driver = new EdgeDriver(options);
+              driver = new EdgeDriver();
         }
         PageFactory.initElements(driver, this);
     }
@@ -70,7 +71,7 @@ public class DataProvider {
         Assert.assertEquals(message.getText(),"Successfully Logged in...");
     }
     @AfterClass
-    public void tearDown() {
+    public void close() {
         if (driver != null) {
             driver.quit();
         }
